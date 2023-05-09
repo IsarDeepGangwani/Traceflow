@@ -1,0 +1,100 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-05-03T13:08:53.360Z",
+    "end": "2023-05-03T13:09:31.178Z",
+    "duration": 37818,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "b16d0042-68af-4ce0-b3e1-25bf14fbfc37",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Traceflow\\ProfileModule\\ProfileScreen.cy.ts",
+      "file": "cypress\\e2e\\Traceflow\\ProfileModule\\ProfileScreen.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a3b735c7-70c1-4622-8f2f-5af34147b2c1",
+          "title": "Navigate to Profile",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Edit Profile",
+              "fullTitle": "Navigate to Profile Edit Profile",
+              "timedOut": null,
+              "duration": 37637,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos\",\n  \"value\": \"cypress\\\\e2e\\\\Traceflow\\\\ProfileModule\\\\ProfileScreen.cy.ts\"\n}",
+              "code": "cy.fixture('Logincredentials').then(function (data) {\n    cy.login(data.email, data.password);\n});\ncy.wait(20000);\nvar profileDriver = new ProfilePage_1.default();\nprofileDriver.userProfile();\nprofileDriver.editProfile();",
+              "err": {},
+              "uuid": "1b2e42b9-cb4c-4bfb-a1e2-9b42d017e1af",
+              "parentUUID": "a3b735c7-70c1-4622-8f2f-5af34147b2c1",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "1b2e42b9-cb4c-4bfb-a1e2-9b42d017e1af"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 37637,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
