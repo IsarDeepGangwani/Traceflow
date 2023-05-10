@@ -20,7 +20,8 @@ class ProfilePage {
     getAllPermissionLabelText_Locator = '.rounded-lg.w-full.items-center.justify-center'
     permissiontoggleBtn_Locator = "#headlessui-switch-3"
     saveButn_Locator = '.md\:mt-0 > button'
-    languageCheckBox='[type="checkbox"]'
+    languageCheckBox_Locator='[type="checkbox"]'
+    commemtToggleBtn_Locator='#headlessui-switch-10'
 
 
 
@@ -67,8 +68,8 @@ class ProfilePage {
             
 
         })
-        const selectAllLanguage = cy.get(this.languageCheckBox).check()
-        const dselectAllLanguage = cy.get(this.languageCheckBox).uncheck({force:true})
+        const selectAllLanguage = cy.get(this.languageCheckBox_Locator).check()
+        const dselectAllLanguage = cy.get(this.languageCheckBox_Locator).uncheck({force:true})
         
 
         const allPermissionLabel = cy.get(this.getAllPermissionLabelText_Locator).invoke('text').then((txt) => {
@@ -76,7 +77,7 @@ class ProfilePage {
 
         })
         const permissionTogleBtn = cy.get(this.permissiontoggleBtn_Locator).click({ force: true })
-        const commemtToggleBtn=cy.get('#headlessui-switch-10').click({force:true})
+        const commemtToggleBtn=cy.get(this.commemtToggleBtn_Locator).click({force:true})
 
         const saveBtn=cy.get('button').contains('Save').click({force:true})      
 
