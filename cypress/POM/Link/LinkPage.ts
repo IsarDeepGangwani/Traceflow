@@ -53,7 +53,6 @@ class LinkPage {
     searchBar() {
 
         const searchBar = cy.get(this.searchBar_Locator)
-        //    .contains('Search for an app to link')
         searchBar.click().clear().type('Notion{enter}')
 
     }
