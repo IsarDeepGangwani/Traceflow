@@ -11,7 +11,7 @@ class SpacesPage {
     uploadInstLabel_Locator = 'div>.relative>p'
     spacesTab_Locator = 'a[href="/workspace/spaces"]'
     inputSpaceName_Locator = '#spaceName'
-    publicToggleBtn_Locator = 'button[id^=headlessui-switch-]'
+    toggleBtn_Locator = 'button[id^=headlessui-switch-]'
     copyLink_Locator = '#myTooltip'
     uniqueLink_Locator = '.flex-row'
     createSpaceLabel_Locator = '.text-center'
@@ -45,6 +45,7 @@ class SpacesPage {
     selectSpace_Locator = '.MuiMenu-list >div>div>.pr-1>div>a>div+div>.text-sm'
     editSpaceBtn_Locator = '.mt-20 > a'
     deleteBox_Locator = '.relative > div > input'
+    tableRow_Locator='.rounded-xl'
 
 
 
@@ -73,7 +74,7 @@ class SpacesPage {
         const clickOnSpaceBtn = cy.contains('p', 'Create a Space').click()
         const inputSpaceName = cy.get(this.inputSpaceName_Locator).clear().type('New Space{enter}')
         cy.get(this.Image_Locator).eq(0).attachFile(this.imagePath)
-        const publicToggleBtn = cy.get(this.publicToggleBtn_Locator).eq(0).click()
+        const publicToggleBtn = cy.get(this.toggleBtn_Locator).eq(0).click()
         const copyLink = cy.get(this.copyLink_Locator).trigger('mouseover', { force: true }).should('have.text', 'Copy to clipboard')
         const uniqueLink = cy.get(this.uniqueLink_Locator).eq(1).invoke('text').then(cy.log)
         const createSpaceLabel = cy.get(this.createSpaceLabel_Locator).eq(1).should('have.text', 'Create a space').invoke('text').then(cy.log)
@@ -161,6 +162,9 @@ class SpacesPage {
 
 
         const createSpaceBtn = cy.contains('button', 'Create').click()
+        const syncToggleBtn=cy.get(this.toggleBtn_Locator).first().click({force:true})
+        const cancelBtn=cy.contains('button','Cancel').should('be.visible').should('be.enabled')
+        const confirmBtn=cy.contains('button','Confirm').should('be.visible').should('be.enabled').click()
 
 
     }
@@ -175,12 +179,24 @@ class SpacesPage {
 
         })
 
-        if (cy.get('table').should('exist').find('tbody').find('td')) {
+        cy.get('table').then(($td) => {
 
-            cy.get('tbody').find('td\n').each(($td) => {
-                cy.log($td.text())
-            })
-        }
+            if ($td.find('td').length > 0) {
+
+                cy.get(this.tableRow_Locator).each(($row) => {
+
+                    cy.wrap($row).within(() => {
+                        cy.get('td').each(($col) => {
+                            cy.log($col.text())
+                        })
+                    })
+
+                })
+
+            } else {
+                cy.log('No Space is added')
+            }
+        })
     }
 
     editSpace() {
@@ -212,7 +228,7 @@ class SpacesPage {
         cy.contains('button', 'Delete Space').should('be.disabled')
         cy.contains('button', 'Cancel').should('be.enabled')
         cy.get(this.deleteBox_Locator).type('Delete', { force: true })
-        cy.contains('button','Delete Space').should('be.enabled').click({force:true})
+        cy.contains('button', 'Delete Space').should('be.enabled').click({ force: true })
 
 
     }
