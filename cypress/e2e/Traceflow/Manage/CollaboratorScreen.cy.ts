@@ -1,7 +1,7 @@
 import CollaboratorPage from "../../../POM/Manage/CollaboratorPage"
 describe('Verify Manage Sub-Modules', () => {
 
-    it('should navigate to Collaboratorpage', () => {
+    it('should navigate to CollaboratorPage', () => {
 
         cy.fixture('Logincredentials').then((data) => {
             cy.login(data.email, data.password)
