@@ -1,7 +1,7 @@
 import TeamPage from "../../../POM/Manage/TeamPage"
 describe('Verify Manage Sub-Modules', () => {
 
-    it('should navigate to Managepage', () => {
+    it('should navigate to Team page', () => {
 
         cy.fixture('Logincredentials').then((data) => {
             cy.login(data.email, data.password)

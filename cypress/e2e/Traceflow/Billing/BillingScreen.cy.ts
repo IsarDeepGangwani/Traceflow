@@ -1,7 +1,7 @@
 import BillingPage from "../../../POM/Billing/BillingPage";
-describe('Verify Identity Module', () => {
+describe('Verify Billing Module', () => {
 
-    it('should navigate to Permissions Page', () => {
+    it('should navigate to Billing Page', () => {
 
         cy.fixture('Logincredentials').then((data) => {
             cy.login(data.expertEmail, data.expertPassword)

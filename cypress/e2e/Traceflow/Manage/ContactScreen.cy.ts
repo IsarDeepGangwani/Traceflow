@@ -1,7 +1,7 @@
 import ContactPage from "../../../POM/Manage/ContactPage"
 describe('Verify Manage Sub-Modules', () => {
 
-    it('should naviagte to Contact_Module', () => {
+    it('should naviagte to Contact Page', () => {
 
         cy.fixture('Logincredentials').then((data) => {
             cy.login(data.email, data.password)

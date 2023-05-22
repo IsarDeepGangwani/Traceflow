@@ -1,7 +1,7 @@
 import MemberPage from "../../../POM/Manage/MemberPage"
 describe('Verify Manage Sub-Modules', () => {
 
-    it('should navigate to MembersPage', () => {
+    it('should navigate to Members Page', () => {
 
         cy.fixture('Logincredentials').then((data) => {
             cy.login(data.email, data.password)

@@ -6,7 +6,7 @@ import { data } from "cypress/types/jquery"
 describe('Verify Login Sucessful', () => {
 
 
-    it('Verify Login Sucessful', () => {
+    it('should Login Sucessfully', () => {
 
         cy.visit('/')
         cy.fixture('Logincredentials.json').then((data)=>{

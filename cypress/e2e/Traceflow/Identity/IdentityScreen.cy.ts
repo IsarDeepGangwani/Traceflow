@@ -1,7 +1,7 @@
 import IdentityPage from "../../../POM/Identity/IdentityPage";
 describe('Verify Identity Module',()=>{
 
-    it('should navigate to Permissions Page',()=>{
+    it('should navigate to Identity Page',()=>{
 
         cy.fixture('Logincredentials').then((data) => {
             cy.login(data.expertEmail, data.expertPassword)
